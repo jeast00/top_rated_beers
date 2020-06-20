@@ -6,5 +6,9 @@ class TopRatedBeers::CLI
     puts "Welcome to Top Rated Beers!"
   end
 
+  def list_beers
+
+  end
+
 
 end
