@@ -3,7 +3,7 @@
 class TopRatedBeers::CLI
 
   def call
-    puts "Does this show up?"
+    puts "Welcome to Top Rated Beers!"
   end
 
 
