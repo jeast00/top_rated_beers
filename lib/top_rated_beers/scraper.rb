@@ -3,17 +3,13 @@
 
 class TopRatedBeers::Scraper
 
-
-  def get_response_body
-    uri = URI.parse("https://untappd.com/beer/top_rated")
-    response = Net::HTTP.get_response(uri)
-    response.body
-  end
+  @doc = Nokogiri::HTML( open("https://untappd.com/beer/top_rated") )
 
 
 
   def self.scrape_beer_names
-    get_response_body.css("div.beer-details").map { |beer| beer.css("p.name").text }
+    @doc.css( "div.beer-details").map { |beer| beer.css("p.name").text }
   end
+
 
 end
