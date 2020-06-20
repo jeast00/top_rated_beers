@@ -12,5 +12,13 @@ class TopRatedBeers::Scraper
     self.get_beer_page.css(".beer-details")
   end
 
+  def self.make_beers
+    self.get_beer_details.each { |beer|
+      beer_info = TopRatedBeers::Beers.new
+      beer_info.name = beer.css("p.name").text
+      binding.pry
+    }
+  end
+
 
 end

@@ -9,11 +9,13 @@ class TopRatedBeers::CLI
     # list_beers
   end
 
-  # def list_beers
-  #   TopRatedBeers::Scraper.scrape_beer_names.each.with_index( 1 ) { |beer, index|
-  #     puts "#{ index }. #{ beer }"
-  #   }
-  # end
+  def list_beers
+
+  end
+
+  def close_app
+    "Thank you for checking out the app! Have a great day!"
+  end
 
 
 end

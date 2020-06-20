@@ -10,8 +10,8 @@ class TopRatedBeers::Beers
   end
 
   #attributes
-  attr_accessor :beer_names, :company, :style, :abv, :abv, :ibu,
-                :rating, :summary, :url, :availability
+  attr_accessor :name, :company, :style, :abv, :ibu,
+                :rating, :summary
 
    #instance methods
    def initialize
