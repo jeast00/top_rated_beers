@@ -3,14 +3,13 @@
 
 class TopRatedBeers::Scraper
 
-  @doc = Nokogiri::HTML( open("https://untappd.com/beer/top_rated") )
 
-  
+  def self.get_beer_page
+    @doc = Nokogiri::HTML(open("https://untappd.com/beer/top_rated"))
+  end
 
-
-
-  def self.scrape_beer_names
-    @doc.css( "div.beer-details").map { |beer| beer.css("p.name").text }
+  def self.get_beer_details
+    self.get_beer_page.css(".beer-details")
   end
 
 
