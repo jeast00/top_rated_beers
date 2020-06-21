@@ -14,8 +14,8 @@ class TopRatedBeers::Beers
   attr_accessor :name, :company, :style, :abv, :ibu, :rating, :summary
 
    #instance methods
-   def initialize(name)#, company, style, abv, ibu, rating, summary)
-     @name = name#, @company, @style, @abv, @ibu, @rating, @summary = name, company, style, abv, ibu, rating, summary
+   def initialize(name, company, style, abv, ibu, rating, summary)
+     @name, @company, @style, @abv, @ibu, @rating, @summary = name, company, style, abv, ibu, rating, summary
      save
    end
 

@@ -5,16 +5,17 @@ class TopRatedBeers::CLI
 
 
   def call
-    # puts "Welcome to Top Rated Beers!"
+    puts "Welcome to Top Rated Beers!"
     list_beers
     # binding.pry
   end
 
   def list_beers
-    variable = TopRatedBeers::Beers.all.each.with_index(1) { |beer|
+    TopRatedBeers::Scraper.make_beers
+    TopRatedBeers::Beers.all.each.with_index(1) { |beer, index|
       puts "#{index}. #{beer.name}"
     }
-    binding.pry
+    # binding.pry
   end
 
   def close_app
