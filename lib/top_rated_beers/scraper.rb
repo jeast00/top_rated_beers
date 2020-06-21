@@ -16,16 +16,16 @@ class TopRatedBeers::Scraper
   def self.make_beers
     self.get_beer_details.each { |beer|
       # beer_info = TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
-      name = beer.css(".beer-details p.name").text
-      company = beer.css(".beer-details p.style").text
-      style = beer.css(".beer-details p.style")[1].text
+      name = beer.css("p.name").text
+      company = beer.css("p.style")[0].text
+      style = beer.css("p.style")[1].text
       abv = beer.css(".details p.abv").text.gsub("\n","")
       ibu = beer.css(".details p.ibu").text.gsub("\n","")
       rating = beer.css(".details .num").children.text
-      summary = beer.css(".beer-details .desc")[1].text.gsub("Read Less", "")
+      summary = beer.css(".desc")[1].text.gsub("Read Less", "")
       # binding.pry
       TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
-      # binding.pry
+      binding.pry
     }
   end
 
