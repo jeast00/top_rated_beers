@@ -6,9 +6,10 @@ require 'pry'
 
 #require_relative files
 require_relative "./top_rated_beers/version"
+require_relative "./top_rated_beers/scraper"
 require_relative "./top_rated_beers/beers"
 require_relative "./top_rated_beers/cli"
-require_relative "./top_rated_beers/scraper"
+
 
 
 

@@ -9,14 +9,21 @@ class TopRatedBeers::Beers
     @@all
   end
 
+
   #attributes
-  attr_accessor :name, :company, :style, :abv, :ibu,
-                :rating, :summary
+  attr_accessor :name, :company, :style, :abv, :ibu, :rating, :summary
 
    #instance methods
-   def initialize
+   def initialize(name)#, company, style, abv, ibu, rating, summary)
+     @name = name#, @company, @style, @abv, @ibu, @rating, @summary = name, company, style, abv, ibu, rating, summary
+     save
+   end
+
+   def save
      @@all << self
    end
+
+   # binding.pry
 
 
 end
