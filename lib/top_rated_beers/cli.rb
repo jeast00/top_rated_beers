@@ -31,21 +31,28 @@ class TopRatedBeers::CLI
     input = nil
     while input != 'exit'
       input = gets.strip.downcase
-      if input.to_i.between?(1, TopRatedBeers::Beers.all.length)
+      if input.to_i > 0
         beer_selection = TopRatedBeers::Beers.all[input.to_i - 1]
-        <<-DETAILS
-        Beer Name: #{beer_selection.name}
-        Company: #{beer_selection.company}
-        Style: #{beer_selection.style}
-        DETAILS
+
+        puts "Beer Name: #{beer_selection.name}"
+        puts "Company: #{beer_selection.company}"
+        puts "Style: #{beer_selection.style}"
+        puts "Alcohol by Volume: #{beer_selection.abv}"
+        puts "International Bitterness Units: #{beer_selection.ibu}"
+        puts "Rating: #{beer_selection.rating}"
+        ----------------------------------------------------------------------------------------
+        Summary: #{beer_selection.summary}
+        ----------------------------------
+
+        Type another number and press the 'enter' key, type 'list', or type 'exit' if you are done.
+
       elsif input == 'list'
         list_beers
         puts ""
         puts "Type a number (1-50) to select a beer and see the details."
         puts "Type 'exit' if you are done."
       else
-        "I did not understand your input. Type 'list' and press the 'enter' key\n
-        end to see the list of beers or type 'exit' if you are done"
+        "I did not understand your input. Type 'list' and press the 'enter' key to see the list of beers or type 'exit' if you are done"
       end
     end
     close_app
