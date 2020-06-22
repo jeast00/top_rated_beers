@@ -15,7 +15,6 @@ class TopRatedBeers::Scraper
 
   def self.make_beers
     self.get_beer_details.each { |beer|
-      # beer_info = TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
       name = beer.css("p.name").text
       company = beer.css("p.style")[0].text
       style = beer.css("p.style")[1].text
@@ -23,11 +22,7 @@ class TopRatedBeers::Scraper
       ibu = beer.css(".details p.ibu").text.gsub("\n","")
       rating = beer.css(".details .num").children.text
       summary = beer.css(".desc")[1].text.gsub("Read Less", "")
-      # binding.pry
       beer_info = TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
-      # binding.pry
     }
   end
-
-
 end
