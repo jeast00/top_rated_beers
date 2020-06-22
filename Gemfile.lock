@@ -30,6 +30,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    warning (1.1.0)
 
 PLATFORMS
   ruby
@@ -41,6 +42,7 @@ DEPENDENCIES
   rake (~> 12.0)
   rspec (~> 3.0)
   top_rated_beers!
+  warning (~> 1.1)
 
 BUNDLED WITH
    2.1.4

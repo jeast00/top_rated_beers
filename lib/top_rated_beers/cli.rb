@@ -16,12 +16,11 @@ class TopRatedBeers::CLI
     puts "Welcome to Top Rated Beers!".colorize(:yellow)
     puts ""
     sleep(2)
+    puts "To begin, type " + "'list'".colorize(:yellow) + " and press the " + "'enter'".colorize(:yellow) + " key."
     puts ""
-    puts "What would you like to do?"
-    puts ""
-    puts "Type " + "'list'".colorize(:yellow) + " to see the list of beers."
-    puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
-    puts ""
+    # puts "Type " + "'list'".colorize(:yellow) + " to see the list of beers."
+    # puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
+    # puts ""
   end
 
   def menu
@@ -30,17 +29,25 @@ class TopRatedBeers::CLI
       input = gets.strip.downcase
       if input.to_i.between?(1, TopRatedBeers::Beers.all.length)
         TopRatedBeers::Beers.print_beer_details(input)
-        puts "----------------------------------"
+        puts ""
         puts ""
         puts "Type another number and press the " + "'enter'".colorize(:yellow) + " key"
         puts "Type " + "'list'".colorize(:yellow) + " to see the list again."
         puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
       elsif input == 'list'
-        list_beers
+        puts ""
+        puts "Please wait..."
+        puts ""
+        sleep(2)
+        TopRatedBeers::Beers.print_beers
         puts ""
         puts "Type a number " + "(1-50)".colorize(:yellow) + " to select a beer and view the details."
         puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
       elsif input == 'exit'
+        puts ""
+        puts "Please wait..."
+        puts ""
+        sleep(2)
         close_app
       else
         puts "I did not understand your input.".colorize(:yellow)
@@ -49,12 +56,9 @@ class TopRatedBeers::CLI
     end
   end
 
-
-  def list_beers
-    TopRatedBeers::Beers.print_beers
-  end
-
-
+  # def list_beers
+  #   TopRatedBeers::Beers.print_beers
+  # end
 
   def close_app
     puts "-----------------------------------------------------"
