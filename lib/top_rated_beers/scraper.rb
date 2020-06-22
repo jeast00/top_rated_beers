@@ -5,7 +5,7 @@ class TopRatedBeers::Scraper
 
 
   def self.get_beer_page
-    @doc = Nokogiri::HTML(open("https://untappd.com/beer/top_rated"))
+    Nokogiri::HTML(open("https://untappd.com/beer/top_rated"))
   end
 
   def self.get_beer_details

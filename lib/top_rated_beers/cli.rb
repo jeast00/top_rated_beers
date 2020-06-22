@@ -2,8 +2,6 @@
 
 class TopRatedBeers::CLI
 
-
-
   def call
     TopRatedBeers::Scraper.make_beers
     menu_instructions
@@ -56,15 +54,10 @@ class TopRatedBeers::CLI
     end
   end
 
-  # def list_beers
-  #   TopRatedBeers::Beers.print_beers
-  # end
-
   def close_app
     puts "-----------------------------------------------------"
     puts "Thank you for checking out the app! Have a great day!".colorize(:yellow)
     puts "-----------------------------------------------------"
   end
-
 
 end
