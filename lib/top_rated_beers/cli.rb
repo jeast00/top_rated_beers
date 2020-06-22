@@ -48,7 +48,8 @@ class TopRatedBeers::CLI
         sleep(2)
         close_app
       else
-        puts "I did not understand your input.".colorize(:yellow)
+        puts "Input invalid...".colorize(:yellow)
+        sleep(2)
         puts "Type 'list' and press the 'enter' key to see the list of beers or type 'exit' if you are done".colorize(:yellow)
       end
     end

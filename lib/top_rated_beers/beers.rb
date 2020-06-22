@@ -20,17 +20,17 @@ class TopRatedBeers::Beers
   end
 
   def self.print_beer_details(index)
-    beer_details = self.find(index)
+    beer = self.find(index)
     puts ""
     puts "/--------------------------------------------------------/"
-    puts "| Beer Name:".colorize(:yellow) + " #{beer_details.name}"
-    puts "| Company:".colorize(:yellow) + " #{beer_details.company}"
-    puts "| Style:".colorize(:yellow) + " #{beer_details.style}"
-    puts "| Alcohol by Volume:".colorize(:yellow) + " #{beer_details.abv}"
-    puts "| International Bitterness Units:".colorize(:yellow) + " #{beer_details.ibu}"
-    puts "| Rating:".colorize(:yellow) + " #{beer_details.rating}"
+    puts "| Beer Name:".colorize(:yellow) + " #{beer.name}"
+    puts "| Company:".colorize(:yellow) + " #{beer.company}"
+    puts "| Style:".colorize(:yellow) + " #{beer.style}"
+    puts "| Alcohol by Volume:".colorize(:yellow) + " #{beer.abv}"
+    puts "| International Bitterness Units:".colorize(:yellow) + " #{beer.ibu}"
+    puts "| Rating:".colorize(:yellow) + " #{beer.rating}"
     puts "/--------------------------------------------------------/"
-    puts "| Summary:".colorize(:yellow) + " #{beer_details.summary}"
+    puts "| Summary:".colorize(:yellow) + " #{beer.summary}"
   end
 
 
