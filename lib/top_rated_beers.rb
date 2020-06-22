@@ -3,6 +3,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'colorize'
 
 #require_relative files
 require_relative "./top_rated_beers/version"
