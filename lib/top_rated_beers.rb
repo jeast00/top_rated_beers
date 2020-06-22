@@ -14,6 +14,6 @@ require_relative "./top_rated_beers/cli"
 
 
 module TopRatedBeers
-  # class Error < StandardError; end
-  # # Your code goes here...
+  class Error < StandardError; end
+  # Your code goes here...
 end

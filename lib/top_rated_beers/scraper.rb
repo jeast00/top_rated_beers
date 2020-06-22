@@ -24,8 +24,8 @@ class TopRatedBeers::Scraper
       rating = beer.css(".details .num").children.text
       summary = beer.css(".desc")[1].text.gsub("Read Less", "")
       # binding.pry
-      TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
-      binding.pry
+      beer_info = TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
+      # binding.pry
     }
   end
 
