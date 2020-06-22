@@ -7,8 +7,8 @@ class TopRatedBeers::CLI
   def call
     TopRatedBeers::Scraper.make_beers
     menu_instructions
-    menu
     # binding.pry
+    menu
   end
 
   def menu_instructions
@@ -18,6 +18,7 @@ class TopRatedBeers::CLI
     sleep(2)
     puts ""
     puts "What would you like to do?"
+    puts ""
     puts "Type " + "'list'".colorize(:yellow) + " to see the list of beers."
     puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
     puts ""
@@ -27,9 +28,8 @@ class TopRatedBeers::CLI
     input = ""
     while input != 'exit'
       input = gets.strip.downcase
-      if input.to_i > 0
+      if input.to_i.between?(1, TopRatedBeers::Beers.all.length)
         beer_selection = TopRatedBeers::Beers.all[input.to_i - 1]
-
         puts "| Beer Name:".colorize(:yellow) + " #{beer_selection.name}"
         puts "| Company:".colorize(:yellow) + " #{beer_selection.company}"
         puts "| Style:".colorize(:yellow) + " #{beer_selection.style}"
@@ -40,15 +40,26 @@ class TopRatedBeers::CLI
         puts "| Summary:".colorize(:yellow) + " #{beer_selection.summary}"
         puts "----------------------------------"
         puts ""
-        puts "Type another number and press the" + "'enter'".colorize(:yellow) + " key"
+        puts "Type another number and press the " + "'enter'".colorize(:yellow) + " key"
         puts "Type " + "'list'".colorize(:yellow)
         puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
-      elsif input == 'list'
+      end
+      if input == 'list'
+        puts "Thank you!"
+        sleep(2)
+        puts "Please wait..."
+        puts ""
+        sleep(3)
         list_beers
         puts ""
         puts "Type a number " + "(1-50)".colorize(:yellow) + " to select a beer and view the details."
-        puts "Type" + "'exit'".colorize(:yellow) + " if you are done."
+        puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
       elsif input == 'exit'
+        puts "Thank you!"
+        sleep(2)
+        puts "Please wait..."
+        puts ""
+        sleep(3)
         close_app
       else
         puts "I did not understand your input.".colorize(:yellow)
