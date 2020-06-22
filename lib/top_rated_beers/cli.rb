@@ -18,8 +18,7 @@ class TopRatedBeers::CLI
     sleep(2)
     puts ""
     puts "What would you like to do?"
-    puts "Type a number " + "(1-50)".colorize(:yellow) + " to see details about that beer."
-    puts "Type " + "'list'".colorize(:yellow) + " to see the list of beers again."
+    puts "Type " + "'list'".colorize(:yellow) + " to see the list of beers."
     puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
     puts ""
   end
@@ -41,18 +40,21 @@ class TopRatedBeers::CLI
         puts "| Summary:".colorize(:yellow) + " #{beer_selection.summary}"
         puts "----------------------------------"
         puts ""
-        puts "Type another number and press the 'enter' key, type 'list', or type 'exit' if you are done."
+        puts "Type another number and press the" + "'enter'".colorize(:yellow) + " key"
+        puts "Type " + "'list'".colorize(:yellow)
+        puts "Type " + "'exit'".colorize(:yellow) + " if you are done."
       elsif input == 'list'
         list_beers
         puts ""
-        puts "Type a number (1-50) to select a beer and see the details."
-        puts "Type 'exit' if you are done."
+        puts "Type a number " + "(1-50)".colorize(:yellow) + " to select a beer and view the details."
+        puts "Type" + "'exit'".colorize(:yellow) + " if you are done."
+      elsif input == 'exit'
+        close_app
       else
         puts "I did not understand your input.".colorize(:yellow)
         puts "Type 'list' and press the 'enter' key to see the list of beers or type 'exit' if you are done".colorize(:yellow)
       end
     end
-    close_app
   end
 
 
