@@ -13,11 +13,9 @@ Create the Interface...
 
  - Welcome to Top Rated Beers!
  - Please select an option:
- 1. See list of top rated beers - they will be sorted by rating - select which beer you would like to get info on
-    List of top rated beers will be long - create a method to hold 10 beers on a list at a time
+ 1. See list of top rated beers
  2. See the information for a beer plus description
- 3. If that beer is selected and you want to continue reading, ask if you want to read more else list commands - maybe
- 4. If user is finished with app, exit the program. - easy exit - Leave message thanking them for checking out the app.
+ 3. If user is finished with app, exit the program. - easy exit - Leave message thanking them for checking out the app.
 
 
 - What makes a Top Rated Beer object?
@@ -28,6 +26,4 @@ Create the Interface...
 - A beer has an ABV
 - A beer has an IBU - International Bitterness Units
 - A beer has a rating
-- A beer has a description
-- A beer has a url
-- A beer has an availability - This beer is no longer being produced by the brewery
+- A beer has a summary
