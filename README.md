@@ -33,7 +33,7 @@ between 1-50 or will need to 'type' exit to end the program.
 
 ## Development
 
-There was no local testing for this application.  This application was built from the ground up and tested within the terminal to ensure the code is properly working.  This application was built from the ground up with the help of countless hours of google searching, the inspiration of learning to code with Flatiron School, and the never ending support from students and staff.
+There was no local testing for this application.  This application was built from the ground up and tested within the terminal to ensure the code was properly working.  This application was built from the ground up with the help of countless hours of google searching, the inspiration of learning to code with Flatiron School, and the never ending support from students and staff.
 
 ## Contributing
 
