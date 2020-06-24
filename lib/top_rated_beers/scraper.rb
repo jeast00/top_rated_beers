@@ -10,7 +10,6 @@ class TopRatedBeers::Scraper
 
   def self.get_beer_details
     self.get_beer_page.css(".beer-item")
-    # binding.pry
   end
 
   def self.make_beers
@@ -25,4 +24,5 @@ class TopRatedBeers::Scraper
       TopRatedBeers::Beers.new(name, company, style, abv, ibu, rating, summary)
     }
   end
+  
 end
